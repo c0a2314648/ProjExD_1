@@ -23,7 +23,7 @@ def main():
         txt = font.render(str(tmr), True, (255, 255, 255))
         screen.fill((50, 50, 50))
         screen.blit(txt, [300, 200])
-        screen.blit(enn, [100, 400])
+        screen.blit(enn, [400, 100])
         pg.display.update()
         tmr += 1        
         clock.tick(1)
