@@ -21,7 +21,8 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
         key_lst = pg.key.get_pressed() #練習８－３
-        if key_lst[pg.K_UP]:           #練習８－４
+        koka_rct.move_ip(-1, 0)
+        if key_lst[pg.K_UP]:          
             koka_rct.move_ip((0, -1))
         if key_lst[pg.K_DOWN]:
             koka_rct.move_ip((0, 1))
@@ -29,8 +30,6 @@ def main():
             koka_rct.move_ip((-1, 0))
         if key_lst[pg.K_RIGHT]:
             koka_rct.move_ip((2, 0))
-        if key_lst[pg.K_LEFT] == False or key_lst[pg.K_RIGHT] == False:
-            koka_rct.move_ip((-1, 0))
 
         x = tmr % 3200
         screen.blit(bg_img, [-x, 0]) #練習６
