@@ -21,15 +21,17 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
         key_lst = pg.key.get_pressed() #練習８－３
-        koka_rct.move_ip(-1, 0)
+        lx = -1
+        ly = 0
         if key_lst[pg.K_UP]:          
-            koka_rct.move_ip((0, -1))
+            ly -= 1
         if key_lst[pg.K_DOWN]:
-            koka_rct.move_ip((0, 1))
+            ly += 1
         if key_lst[pg.K_LEFT]:
-            koka_rct.move_ip((-1, 0))
+            lx -= 1
         if key_lst[pg.K_RIGHT]:
-            koka_rct.move_ip((2, 0))
+            lx += 2
+        koka_rct.move_ip(lx, ly)
 
         x = tmr % 3200
         screen.blit(bg_img, [-x, 0]) #練習６
